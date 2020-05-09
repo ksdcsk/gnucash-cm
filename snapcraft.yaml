@@ -1,9 +1,12 @@
 name: gnucash
 title: "GnuCash"
-version: "3.10"
-summary: GnuCash
+version: "3.8"
+summary: Personal and small-business financial-accounting software.
 description: |
-  GnuCash - the most awesome software that exists.
+  Designed to be easy to use, yet powerful and flexible, GnuCash allows you to
+  track bank accounts, stocks, income and expenses. As quick and intuitive to
+  use as a checkbook register, it is based on professional accounting principles
+  to ensure balanced books and accurate reports.
 
 base: core18
 confinement: strict
