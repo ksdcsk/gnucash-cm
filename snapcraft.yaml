@@ -21,6 +21,8 @@ layout:
     bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/guile
   /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/webkit2gtk-4.0:
     bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/webkit2gtk-4.0
+  /usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dbd:
+    bind: $SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/dbd
 
 parts:
   gnucash-app:
