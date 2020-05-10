@@ -89,6 +89,15 @@ parts:
       - libfinance-quote-perl
       - libdate-manip-perl
 
+  gnucash-desktop-icon:
+    after:
+      - gnucash-app
+    plugin: nil
+    override-prime: |
+      snapcraftctl prime
+      sed -i 's|^Icon=.*|Icon=/usr/local/share/icons/hicolor/scalable/apps/gnucash-icon.svg|' usr/local/share/applications/gnucash.desktop
+
+
   googletest:
     plugin: cmake
     source: https://github.com/google/googletest
@@ -103,6 +112,7 @@ apps:
       LC_ALL: "C.UTF-8"
       PERL5LIB: "$SNAP/usr/share/perl5/:$SNAP/usr/share/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl5/5.26"
     command: desktop-launch $SNAP/usr/local/bin/gnucash
+    desktop: usr/local/share/applications/gnucash.desktop
     plugs:
       - network
       - home
