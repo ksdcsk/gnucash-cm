@@ -131,6 +131,3 @@ apps:
   gnc-fq-helper:
     command: gnc-fq-helper
     plugs: [network]
-  gnc-fq-update:
-    command: gnc-fq-update
-    plugs: [network]
