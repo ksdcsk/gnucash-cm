@@ -103,13 +103,14 @@ parts:
     source-type: git
     source-branch: release-1.8.0
 
+environment:
+  LC_ALL: "C.UTF-8"
+  PERL5LIB: "$SNAP/usr/share/perl5/:$SNAP/usr/share/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl5/5.26"
+
 
 apps:
   gnucash:
     extensions: [gnome-3-28]
-    environment:
-      LC_ALL: "C.UTF-8"
-      PERL5LIB: "$SNAP/usr/share/perl5/:$SNAP/usr/share/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl5/5.26"
     command: desktop-launch $SNAP/usr/local/bin/gnucash
     desktop: usr/local/share/applications/gnucash.desktop
     plugs:
@@ -122,21 +123,12 @@ apps:
       - wayland
       - gsettings
   gnc-fq-check:
-    environment:
-      LC_ALL: "C.UTF-8"
-      PERL5LIB: "$SNAP/usr/share/perl5/:$SNAP/usr/share/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl5/5.26"
     command: gnc-fq-check
     plugs: [network]
   gnc-fq-dump:
-    environment:
-      LC_ALL: "C.UTF-8"
-      PERL5LIB: "$SNAP/usr/share/perl5/:$SNAP/usr/share/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl5/5.26"
     command: gnc-fq-dump
     plugs: [network, home]
   gnc-fq-helper:
-    environment:
-      LC_ALL: "C.UTF-8"
-      PERL5LIB: "$SNAP/usr/share/perl5/:$SNAP/usr/share/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl5/5.26"
     command: gnc-fq-helper
     plugs: [network]
   gnc-fq-update:
