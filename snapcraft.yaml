@@ -33,6 +33,7 @@ parts:
       - -DCMAKE_INSTALL_PREFIX=/usr/local
       - -DWITH_SQL=ON
       - -DWITH_AQBANKING=OFF
+      - -DWITH_PYTHON=OFF
       - -DGNUCASH_BUILD_ID=3.8-snap
     source: https://github.com/Gnucash/gnucash/releases/download/3.8b/gnucash-3.8b.tar.bz2
     source-checksum: sha256/0f5eca83d8836a325d9a02c6ed7b4d53e59abcff974e5d90914c9e15d7a87f37
@@ -62,8 +63,6 @@ parts:
       - libsecret-1-dev
       - zlib1g-dev
       - texinfo
-      - python3
-      - python3-dev
       - dh-python
       - locales-all
       - imagemagick
