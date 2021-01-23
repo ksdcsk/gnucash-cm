@@ -69,6 +69,7 @@ parts:
       - dh-python
       - locales-all
       - imagemagick
+      - gettext
     stage-packages:
       - guile-2.2
       - libgtk-3-0
