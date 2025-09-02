@@ -33,7 +33,7 @@ parts:
     #      - googletest
     plugin: cmake
     cmake-parameters:
-      - -DCMAKE_INSTALL_PREFIX=/usr/local
+      - -DCMAKE_INSTALL_PREFIX=/usr
       - -DWITH_SQL=ON
       - -DWITH_AQBANKING=OFF
       - -DWITH_PYTHON=OFF
@@ -96,6 +96,7 @@ parts:
 #      - perl
 #      - libfinance-quote-perl
 #      - libdate-manip-perl
+      - libproxy1v5
 
   gnucash-desktop-icon:
     after:
@@ -103,7 +104,7 @@ parts:
     plugin: nil
     override-prime: |
       snapcraftctl prime
-      sed -i 's|^Icon=.*|Icon=/usr/local/share/icons/hicolor/scalable/apps/gnucash-icon.svg|' usr/local/share/applications/gnucash.desktop
+      sed -i 's|^Icon=.*|Icon=/usr/share/icons/hicolor/scalable/apps/gnucash-icon.svg|' usr/share/applications/gnucash.desktop
 
 
 #  googletest:
@@ -120,11 +121,13 @@ environment:
 apps:
   gnucash:
     extensions: [ gnome ]
-    command: usr/local/bin/gnucash
-    desktop: usr/local/share/applications/gnucash.desktop
+    command: usr/bin/gnucash
+    desktop: usr/share/applications/gnucash.desktop
+    environment:
+      LD_LIBRARY_PATH: $LD_LIBRARY_PATH:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/gnucash
     plugs:
       - network
       - home
   gnucash-cli :
-    command: usr/local/bin/gnucash-cli
+    command: usr/bin/gnucash-cli
     plugs: [network, home]
