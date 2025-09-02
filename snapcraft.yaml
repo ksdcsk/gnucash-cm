@@ -20,6 +20,8 @@ platforms:
 layout:
   /usr/local/share:
     bind: $SNAP/usr/local/share
+  /usr/share/gnucash:
+    bind: $SNAP/usr/share/gnucash
   /usr/share/guile:
     bind: $SNAP/usr/share/guile
   /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/guile:
