@@ -36,8 +36,6 @@ layout:
 
 parts:
   gnucash-app:
-    #    after:
-    #      - googletest
     plugin: cmake
     cmake-parameters:
       - -DCMAKE_INSTALL_PREFIX=/usr
@@ -113,12 +111,6 @@ parts:
       snapcraftctl prime
       sed -i 's|^Icon=.*|Icon=/usr/share/icons/hicolor/scalable/apps/gnucash-icon.svg|' usr/share/applications/gnucash.desktop
 
-
-#  googletest:
-#    plugin: cmake
-#    source: https://github.com/google/googletest
-#    source-type: git
-#    source-branch: release-1.8.0
 
 environment:
   LC_ALL: "C.UTF-8"
