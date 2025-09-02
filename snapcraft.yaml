@@ -1,6 +1,6 @@
 name: gnucash-cm
 title: GnuCash
-version: "5.12"
+version: "5.12-1"
 summary: Personal and small-business financial-accounting software.
 description: |
   Designed to be easy to use, yet powerful and flexible, GnuCash allows you to
@@ -28,6 +28,11 @@ layout:
     bind: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/guile
   /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/dbd:
     bind: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/dbd
+  /usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/gnucash:
+    bind: $SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/gnucash
+  /usr/bin/finance-quote-wrapper:
+    bind-file: $SNAP/usr/bin/finance-quote-wrapper
+
 
 parts:
   gnucash-app:
@@ -95,9 +100,9 @@ parts:
 #      - libdbd-mysql
       - libdbd-sqlite3
 #      - locales-all
-#      - perl
-#      - libfinance-quote-perl
-#      - libdate-manip-perl
+      - perl
+      - libfinance-quote-perl
+      - libdate-manip-perl
       - libproxy1v5
 
   gnucash-desktop-icon:
@@ -117,7 +122,7 @@ parts:
 
 environment:
   LC_ALL: "C.UTF-8"
-  PERL5LIB: "$SNAP/usr/share/perl5/:$SNAP/usr/share/perl/5.38.2/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/perl/5.38.2/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/perl5/5.26"
+  PERL5LIB: "$SNAP/usr/share/perl5/:$SNAP/usr/share/perl/5.38.2/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/perl/5.38.2/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/perl5/5.38.2"
 
 
 apps:
