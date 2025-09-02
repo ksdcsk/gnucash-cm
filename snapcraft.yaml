@@ -108,7 +108,7 @@ parts:
       - gnucash-app
     plugin: nil
     override-prime: |
-      snapcraftctl prime
+      craftctl default
       sed -i 's|^Icon=.*|Icon=/usr/share/icons/hicolor/scalable/apps/gnucash-icon.svg|' usr/share/applications/gnucash.desktop
 
 
