@@ -46,12 +46,13 @@ parts:
       - git
       - pkg-config
       - libgtest-dev
-      - libxml2-dev
-      - libxml2-utils
+      - libelf-dev
+#      - libxml2-dev
+#      - libxml2-utils
       - libxslt1-dev
-      - libgtk-3-dev
-      - libwebkit2gtk-4.1-dev
-      - libgwengui-gtk3-dev
+#      - libgtk-4-dev
+#      - libglib2.0-dev
+#      - libwebkit2gtk-4.1-dev
       - swig
       - guile-3.0-dev
       - libofx-dev
@@ -65,16 +66,17 @@ parts:
       - libboost-program-options-dev
       - libdbi-dev
       - libdbd-sqlite3
-      - libsecret-1-dev
-      - zlib1g-dev
-      - texinfo
-      - dh-python
-      - locales-all
-      - imagemagick
-      - gettext
-    stage-packages:
+#      - libsecret-1-dev
+#      - zlib1g-dev
+#      - texinfo
+#      - dh-python
+#      - locales-all
+#      - imagemagick
+#      - gettext
+#    stage-packages:
       - guile-3.0
-      - libgtk-3-0
+#      - libgtk-4-1
+#      - libglib2.0-0
       - libboost-date-time1.83.0
       - libboost-filesystem1.83.0
       - libboost-locale1.83.0
@@ -82,18 +84,18 @@ parts:
       - libboost-system1.83.0
       - libboost-thread1.83.0
       - libboost-program-options1.83.0
-      - libsecret-1-0
+#      - libsecret-1-0
       - libxslt1.1
-      - libwebkit2gtk-4.1-0
+#      - libwebkit2gtk-4.1-0
       - libdbi1
-      - libofx7
-      - libdbd-pgsql
-      - libdbd-mysql
+      - libofx7t64
+#      - libdbd-pgsql
+#      - libdbd-mysql
       - libdbd-sqlite3
-      - locales-all
-      - perl
-      - libfinance-quote-perl
-      - libdate-manip-perl
+#      - locales-all
+#      - perl
+#      - libfinance-quote-perl
+#      - libdate-manip-perl
 
   gnucash-desktop-icon:
     after:
