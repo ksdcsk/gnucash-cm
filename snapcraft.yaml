@@ -73,7 +73,7 @@ parts:
 #      - locales-all
 #      - imagemagick
 #      - gettext
-#    stage-packages:
+    stage-packages:
       - guile-3.0
 #      - libgtk-4-1
 #      - libglib2.0-0
