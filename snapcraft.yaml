@@ -10,7 +10,7 @@ description: |
 
 base: core24
 confinement: strict
-grade: devel
+grade: stable
 
 platforms:
   amd64:
