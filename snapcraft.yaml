@@ -14,8 +14,6 @@ grade: devel
 
 platforms:
   amd64:
-    build-on: amd64
-    build-for: amd64
 
 layout:
   /usr/local/share:
