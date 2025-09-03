@@ -96,10 +96,16 @@ parts:
 #      - libdbd-mysql
       - libdbd-sqlite3
 #      - locales-all
-#      - perl
-#      - libfinance-quote-perl
-#      - libdate-manip-perl
+      - perl
+      - libfinance-quote-perl
+      - libdate-manip-perl
       - libproxy1v5
+      - libxml-sax-perl
+    override-prime: |
+      craftctl default
+    
+      # Remove the external symlink
+      rm -f $CRAFT_PRIME/usr/share/perl5/XML/SAX/ParserDetails.ini
 
   gnucash-desktop-icon:
     after:
@@ -112,7 +118,7 @@ parts:
 
 environment:
   LC_ALL: "C.UTF-8"
-#  PERL5LIB: "$SNAP/usr/share/perl5/:$SNAP/usr/share/perl/5.38.2/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/perl/5.38.2/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/perl5/5.38.2"
+  PERL5LIB: "$SNAP/usr/share/perl5/:$SNAP/usr/share/perl/5.38.2/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/perl/5.38.2/:$SNAP/usr/lib/$CRAFT_ARCH_TRIPLET_BUILD_FOR/perl5/5.38.2"
 
 
 apps:
